@@ -8,3 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ @import "bootstrap";
+
+ h1 {
+    font-family: "Open Sans", sans-serif;
+ }
