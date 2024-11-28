@@ -12,4 +12,16 @@
 
  h1 {
     font-family: "Open Sans", sans-serif;
+    margin-top: 50px;
+ }
+
+ body, .navbar {
+// Gradients provided by @i_ghosh at uiGradients.com
+   background: #009FFF;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+
+ .navbar{
+   border: none;
  }
