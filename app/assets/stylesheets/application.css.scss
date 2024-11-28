@@ -10,12 +10,11 @@
  */
  @import "bootstrap";
 
- h1 {
+ h1, h3 {
     font-family: "Open Sans", sans-serif;
-    margin-top: 50px;
  }
 
- body, .navbar {
+ .navbar, .home-callout {
 // Gradients provided by @i_ghosh at uiGradients.com
    background: #009FFF;  /* fallback for old browsers */
    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
@@ -24,4 +23,10 @@
 
  .navbar{
    border: none;
+ }
+
+ .home-callout {
+   color: white;
+   padding-top: 50px;
+   padding-bottom: 50px;
  }
