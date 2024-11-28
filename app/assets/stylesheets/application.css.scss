@@ -10,10 +10,12 @@
  */
  @import "bootstrap";
 
+ // Typography Styles
  h1, h3 {
     font-family: "Open Sans", sans-serif;
  }
 
+ // Background Gradients
  .navbar, .home-callout {
 // Gradients provided by @i_ghosh at uiGradients.com
    background: #009FFF;  /* fallback for old browsers */
@@ -21,32 +23,22 @@
    background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  }
 
- .navbar{
-   border: none;
- }
-
- .navbar-brand{
+// Nav styles
+ .navbar-brand,
+ .navbar-nav .nav-link.active {
    color: white;
-}
-
-.navbar-brand:hover{
+ &:hover {
    color: white;
    opacity: 0.75;
 }
-
-.navbar-nav .nav-link.active {
-   color: white;
 }
 
-.nav-link.active:hover{
-   color: white;
-   opacity: 0.75;
-}
-
+// Search Bar styles
 .form-control {
    color: white;
 }
 
+// Home pages styles
  .home-callout {
    color: white;
    padding-top: 50px;
