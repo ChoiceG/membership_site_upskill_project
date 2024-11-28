@@ -25,6 +25,28 @@
    border: none;
  }
 
+ .navbar-brand{
+   color: white;
+}
+
+.navbar-brand:hover{
+   color: white;
+   opacity: 0.75;
+}
+
+.navbar-nav .nav-link.active {
+   color: white;
+}
+
+.nav-link.active:hover{
+   color: white;
+   opacity: 0.75;
+}
+
+.form-control {
+   color: white;
+}
+
  .home-callout {
    color: white;
    padding-top: 50px;
