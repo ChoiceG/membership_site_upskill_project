@@ -12,13 +12,17 @@
  @import "font-awesome";
 
  // Typography Styles
- h1, h3 {
+ body {
     font-family: "Open Sans", sans-serif;
  }
 
  // Added padding to the navbar
  .container-fluid {
    padding: 10px 60px;
+ }
+
+ .navbar {
+   border: none;
  }
 
  // Background Gradients
@@ -39,9 +43,9 @@
 }
 }
 
-// Search Bar styles
-.form-control {
-   color: white;
+// Styled the logo
+.navbar-brand {
+   font-weight: 800;
 }
 
 // Home pages styles
