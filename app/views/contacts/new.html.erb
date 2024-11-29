@@ -1,16 +1,30 @@
 <div class="container-fluid">
-    <h3 class="text-center">Contact Us</h3>
+    <div class="row">
+        <h3 class=" text-center">Contact Us</h3>
 
-    <%= form_for "/contacts" do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+        <div class="col-4 offset-md-4">
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+            <%= form_for "/contacts" do |f| %>
+            <div class=" form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Enter name' %>
+            </div> <br>
 
-    <%= f.label :comments %>
-    <%= f.text_field :comments %>
+            <div class="form-group">
+                <%= f.label :email %>
+                <%= f.text_field :email, class: 'form-control', placeholder: 'Enter email'  %>
+            </div> <br>
 
-    <%= f.submit "Submit", disable_with: 'Submiting...' %>
-    <% end %>
+            <div class="form-group">
+                <%= f.label :comments %>
+                <%= f.text_area :comments, class: 'form-control', placeholder: 'Add comment here..' , rows: '3' %>
+            </div> <br>
+
+            <div class="form-group">
+                <%= f.submit "Submit", disable_with: 'Submiting...', class: 'btn btn-primary' %>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
 </div>
