@@ -21,10 +21,6 @@
    padding: 10px 60px;
  }
 
- .navbar {
-   border: none;
- }
-
  // Background Gradients
  .navbar, .home-callout {
 // Gradients provided by @i_ghosh at uiGradients.com
@@ -34,6 +30,10 @@
  }
 
 // Nav styles
+.navbar {
+   border: none;
+ }
+
  .navbar-brand,
  .navbar-nav .nav-link.active {
    color: white;
@@ -41,6 +41,18 @@
    color: white;
    opacity: 0.75;
 }
+}
+
+.navbar-toggler {
+   background-color: white;
+   &:hover, &:focus{
+      background-color: #ec2F4B;
+      border: none;
+   }
+}
+
+.navbar-toggler-icon{
+   background-color: none;
 }
 
 // Styled the logo
