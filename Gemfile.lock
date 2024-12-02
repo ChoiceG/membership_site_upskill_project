@@ -123,6 +123,7 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hirb (0.7.3)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -367,6 +368,7 @@ DEPENDENCIES
   capybara
   debug
   font-awesome-sass
+  hirb (= 0.7.3)
   importmap-rails
   jbuilder
   kamal
