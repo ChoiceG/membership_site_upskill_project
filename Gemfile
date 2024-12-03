@@ -64,8 +64,6 @@ end
 group :production do
   # Use the PostgreSQL gem for Heroku production servers
   gem "pg", "1.5.9"
-
-  gem "rails_12factor"
 end
 
 group :development do
