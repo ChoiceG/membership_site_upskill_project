@@ -52,7 +52,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Use sqlite3 as the database for Active Record
-  gem "sqlite3", "2.1"
+  gem "sqlite3"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
@@ -64,6 +64,8 @@ end
 group :production do
   # Use the PostgreSQL gem for Heroku production servers
   gem "pg", "1.5.9"
+
+  gem "rails_12factor"
 end
 
 group :development do
