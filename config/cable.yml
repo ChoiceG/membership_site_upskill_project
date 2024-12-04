@@ -9,9 +9,9 @@ test:
   adapter: test
 
 production:
-  adapter: solid_cable
+  adapter: postgresql
   connects_to:
-    database:
+    database_url: postgres://u81u7ba2n3o0lr:p959cd1f87626b6c124bf310e2e76b7fe24a3ea3dea387f364a71cfcf4bb72df7@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dad94hbtm76rg0
       writing: cable
   polling_interval: 0.1.seconds
   message_retention: 1.day
