@@ -24,11 +24,11 @@ test:
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
-production:
-  primary:
-    <<: *default
+production: 
+     <<: *default
+     url: <%= ENV['DATABASE_URL'] %>
     adapter: postgresql
-    database: primary_production
+    database_url: postgres://u81u7ba2n3o0lr:p959cd1f87626b6c124bf310e2e76b7fe24a3ea3dea387f364a71cfcf4bb72df7@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dad94hbtm76rg0
   cache:
     <<: *default
     adapter: postgresql
