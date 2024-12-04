@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 3 } %>
   timeout: 5000
 
 development:
@@ -25,22 +25,22 @@ test:
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production: 
-     <<: *default
-     url: <%= ENV['DATABASE_URL'] %>
-    adapter: postgresql
-    database_url: postgres://u81u7ba2n3o0lr:p959cd1f87626b6c124bf310e2e76b7fe24a3ea3dea387f364a71cfcf4bb72df7@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dad94hbtm76rg0
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database_url: postgres://u81u7ba2n3o0lr:p959cd1f87626b6c124bf310e2e76b7fe24a3ea3dea387f364a71cfcf4bb72df7@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dad94hbtm76rg0
   cache:
-    <<: *default
-    adapter: postgresql
-    database: Cache_production
-    migrations_paths: db/cache_migrate
+  <<: *default
+  adapter: postgresql
+  database: Cache_production
+  migrations_paths: db/cache_migrate
   queue:
-    <<: *default
-    adapter: postgresql
-    database: Queue_production
-    migrations_paths: db/queue_migrate
+  <<: *default
+  adapter: postgresql
+  database: Queue_production
+  migrations_paths: db/queue_migrate
   cable:
-    <<: *default
-    adapter: postgresql
-    database: Cable_production
-    migrations_paths: db/cable_migrate
+  <<: *default
+  adapter: postgresql
+  database: Cable_production
+  migrations_paths: db/cable_migrate
