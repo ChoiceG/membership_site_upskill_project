@@ -5,7 +5,7 @@ threads Integer(ENV["RAILS_MAX_THREADS"] || 5), Integer(ENV["RAILS_MAX_THREADS"]
 
 preload_app!
 
-rackup      DefaultRackup
+rackup      config.ru
 port        ENV["PORT"]     || 3000
 environment ENV["RAILS_ENV"] || "development"
 
