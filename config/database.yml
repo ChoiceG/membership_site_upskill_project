@@ -6,41 +6,43 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: postgres
+  password: "@Silent190"
+  host: localhost
 
 development:
   <<: *default
-  adapter: postgresql
-  database: project_development
+  database: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  adapter: postgresql
-  database: test_development
+  database: heroku_test
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
-production: 
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  adapter: postgresql
-  database_url: postgres://u81u7ba2n3o0lr:p959cd1f87626b6c124bf310e2e76b7fe24a3ea3dea387f364a71cfcf4bb72df7@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dad94hbtm76rg0
+production:
+  primary: &primary_production
+    <<: *default
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    url: <%= ENV[ 'DATABASE_URL' ] %>
   cache:
-  <<: *default
-  adapter: postgresql
-  database: Cache_production
-  migrations_paths: db/cache_migrate
+    <<: *primary_production
+    database: heroku_production_cache
+    migrations_paths: db/cache_migrate
   queue:
-  <<: *default
-  adapter: postgresql
-  database: Queue_production
-  migrations_paths: db/queue_migrate
+    <<: *primary_production
+    database: heroku_production_queue
+    migrations_paths: db/queue_migrate
   cable:
-  <<: *default
-  adapter: postgresql
-  database: Cable_production
-  migrations_paths: db/cable_migrate
+    <<: *primary_production
+    database: heroku_production_cable
+    migrations_paths: db/cable_migrate
