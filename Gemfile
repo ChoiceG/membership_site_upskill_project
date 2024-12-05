@@ -22,6 +22,8 @@ gem "sassc-rails"
 gem "font-awesome-sass"
 # Use Hirb for better database display in console
 gem "hirb", "0.7.3"
+# Use rack to load puma to deploy database in heroku
+gem "rack"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
