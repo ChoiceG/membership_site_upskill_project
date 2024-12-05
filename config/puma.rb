@@ -5,16 +5,12 @@ threads Integer(ENV["RAILS_MAX_THREADS"] || 5), Integer(ENV["RAILS_MAX_THREADS"]
 
 preload_app!
 
-rackup      DefaultRackup
 port        ENV["PORT"]     || 3000
 environment ENV["RAILS_ENV"] || "development"
 
 on_worker_boot do
   ActiveRecord::Base.establish_connection
 end
-
-# Configuration for Cluster mode
-plugin :Rack::Timeout
 
 # Configure Puma to use a cluster mode
 cluster_master true
